@@ -14,6 +14,7 @@ const schema = buildSchema(`
         babs: String
     }
     type Query {
+        spotify(query:[String]): String,
         hello: String,
         randomPercent: Float,
         myAge: Int,
@@ -23,16 +24,5 @@ const schema = buildSchema(`
     }
 `);
 
-const rootValue = {
-    hello: () => 'Hello World!',
-    randomPercent: () => (Math.random() + 1) * 50,
-    myAge: () => 25,
-    trumpRocks: () => false,
-    anID: () => 'sdf91riuehd8',
-    aCoupleStuff: () => ({ 
-        me: () => 'David', 
-        babs: () => 'Mie'
-    })
-};
 
-module.exports = { schema, rootValue };
+module.exports = schema;

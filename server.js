@@ -4,7 +4,8 @@ const express = require('express');
 const cors = require('cors');
 
 const graphqlHTTP = require('express-graphql');
-const { schema, rootValue } = require('./src/gql');
+const schema = require('./src/gql/schema');
+const rootValue = require('./src/gql/roots');
 
 const app = express();
 app.use(cors());
