@@ -13,8 +13,11 @@ const schema = buildSchema(`
         me: String,
         babs: String
     }
+    type Spotify {
+        albums(q:String): String,
+    }
     type Query {
-        spotify(query:[String]): String,
+        spotify: Spotify,
         hello: String,
         randomPercent: Float,
         myAge: Int,
